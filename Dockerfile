@@ -24,5 +24,6 @@ COPY conf/supervisord.conf /etc/supervisord.conf
 COPY conf/opcache.ini $PHP_INI_DIR/conf.d/docker-php-ext-opcache.ini
 
 RUN rm -rf /usr/src/* && apk del && chmod +x /usr/local/bin/entrypoint
+RUN git config --global --add safe.directory '*'
 
 ENTRYPOINT ["entrypoint"]
